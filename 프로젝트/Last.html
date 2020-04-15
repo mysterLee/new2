@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Webpage Title -->
+  <title>엄청 싸요</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- 구글폰트 -->
+  <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+  <script type="text/javascript">
+    function hey() {
+      let name = $('#order_name').val();
+      // let select = $('#inputGroupSelect01').val();
+      let add = $('#order_address').val();
+      let tel = $('#order_phone').val();
+      let list = '<li>' + name + '&nbsp' + add + '&nbsp' + tel + '</li>';
+      if (name == '') {
+        alert('주문자 성함을 입력해주세요.');
+        $('#name').focus();
+      }
+      // else if (select == '') {
+      // alert('무게를 선택하세요.');
+      // $('#inputGroupSelect01').focus();
+      // } 
+      else if (add == '') {
+        alert('주소를 입력해주세요.');
+        $('#order_address').focus();
+      } else if (tel == '') {
+        alert('전화번호를 입력해주세요.');
+        $('#order_phone').focus();
+      } else {
+        alert('주문이 성공하였습니다');
+        $('#orderlist').append(list);
+        $('#order_name').val('');
+        $('#order_address').val('');
+        $('#order_phone').val('');
+      }
+    }
+  </script>
+
+  <STYLE type="text/css">
+    html,
+    body {
+      height: 0%;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    body:before {
+      content: '';
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .TOTAL {
+      width: 500PX;
+      padding: auto;
+      margin: 0 auto 30px auto;
+    }
+
+    .ian {
+      font-size: 3rem;
+    }
+
+    .iani {
+      font-size: 1rem;
+    }
+
+    .order {
+      text-align: center;
+    }
+
+    .orders {
+      margin-top: 100px;
+    }
+  </STYLE>
+</head>
+
+<body>
+
+  <DIV class="TOTAL">
+
+    <span class="ian">유니폼 </span> <span class="iani"> 가격 540,000원/개당</span>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">주문자이름</span>
+      </div>
+      <input type="text" class="form-control" id="order_name" aria-label="Default"
+        aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">수량</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01" id="order_count">
+        <option selected>선택...</option>
+        <option value="1">1개</option>
+        <option value="2">2개</option>
+        <option value="3">3개</option>
+        <option value="3">4개</option>
+        <option value="3">5개</option>
+        <option value="3">6개</option>
+        <option value="3">7개</option>
+        <option value="3">8개</option>
+        <option value="3">9개</option>
+        <option value="3">10개</option>
+      </select>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+      </div>
+      <input type="text" class="form-control" id="order_address" aria-label="Default"
+        aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+      </div>
+      <input type="text" class="form-control" id="order_phone" aria-label="Default"
+        aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="order">
+      <button onclick="hey()" type="button" class="btn btn-primary">주문하기</button>
+    </div>
+    <ol type='1' id='orderlist'>
+
+    </ol>
+
+  </DIV>
+</body>
+
+</html>
